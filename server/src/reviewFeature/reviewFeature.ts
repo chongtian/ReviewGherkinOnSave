@@ -67,7 +67,7 @@ export async function review(textDocument: TextDocument, settings: ISettings): P
             let diagnosic: Diagnostic = {
                 severity: severity,
                 range: {
-                    start: textDocument.positionAt(linePositions[result.line - 1] + 1),
+                    start: textDocument.positionAt(linePositions[result.line - 1] + 2),
                     end: textDocument.positionAt(linePositions[result.line])
                 },
                 message: `${result.message}`,
