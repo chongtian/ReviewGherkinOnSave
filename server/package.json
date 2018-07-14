@@ -1,0 +1,19 @@
+{
+	"name": "reviewgherkin-server",
+	"description": "A language server to review gherkin feature files.",
+	"version": "0.0.1",
+	"author": "Tony Gao",
+	"license": "MIT",
+	"engines": {
+		"node": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chongtian/reviewgherkinonsave.git"
+	},
+	"dependencies": {
+		"vscode-languageserver": "^4.1.3",
+		"gherkin": "^5.1.0"
+	},
+	"scripts": {}
+}

@@ -1,0 +1,23 @@
+{
+	"name": "reviewgherkinonsave-client",
+	"description": "Client of Review Gherkin Feature On Save",
+	"author": "Tony Gao",
+	"license": "MIT",
+	"version": "0.0.1",
+	"publisher": "TonyGao",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chongtian/reviewgherkinonsave.git"
+	},
+	"engines": {
+		"vscode": "^1.23.0"
+	},
+	"scripts": {
+		"update-vscode": "node ./node_modules/vscode/bin/install",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"dependencies": {
+		"vscode": "^1.1.18",
+		"vscode-languageclient": "^4.1.4"
+	}
+}
