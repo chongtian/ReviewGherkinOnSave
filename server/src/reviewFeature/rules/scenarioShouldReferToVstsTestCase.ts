@@ -12,7 +12,7 @@ export function scenarioShouldReferToVstsTestCase(gherkinDocument: any): Array<I
 
             if (scenario.type === 'ScenarioOutline' || scenario.type === 'Scenario') {
                 let title: string = scenario.name;
-                let regex_testcase = /^\s*TC\d{5,}\s*/;
+                let regex_testcase = /^\s*TC\d{5,}\s*-\s/;
 
                 let match = title.match(regex_testcase);
                 if (match === null || match.length < 1) {

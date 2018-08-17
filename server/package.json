@@ -1,7 +1,7 @@
 {
 	"name": "reviewgherkin-server",
 	"description": "A language server to review gherkin feature files.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"author": "Tony Gao",
 	"license": "MIT",
 	"engines": {
