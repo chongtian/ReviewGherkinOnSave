@@ -85,20 +85,29 @@ export function noUnusedVariables(gherkinDocument: any): Array<IReviewMessage> {
                 }
 
                 // Verify that all the variables used in steps are defined in the examples table
-                if (scenario.steps) {
+                let undefinedStepVariables: Array<string> = [];
+                stepVariables.forEach((stepVariable: string) => {
+                    if (examplesVariables.indexOf(stepVariable) === -1) {
+                        undefinedStepVariables.push(stepVariable);
+                    }
+                });
+
+                if (scenario.steps && undefinedStepVariables) {
                     scenario.steps.forEach((step: any) => {
-                        let match;
-                        while ((match = stepVariableRegex.exec(step.text)) !== null) {
-                            if (examplesVariables.indexOf(match[1]) === -1) {
+
+                        undefinedStepVariables.forEach((variable: string) => {
+                            if (step.text.indexOf('<' + variable + '>') !== -1) {
                                 results.push({
                                     line: step.location.line,
                                     type: 2,
-                                    message: `Step variable ${match[1]} does not exist the in examples table`
+                                    message: `Step variable ${variable} does not exist the in examples table`
                                 });
                             }
-                        }
+                        });
+
                     });
                 }
+
             }
         }
 
